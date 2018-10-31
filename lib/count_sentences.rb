@@ -2,21 +2,19 @@ require 'pry'
 
 class String
 
-  def sentence?
-    if(1 == 1)
-      puts "It's 1"
-    
-  end
+ def sentence?
+   self.end_with?('.')
+ end
 
-  def question?
+ def question?
+   self.end_with?('?')
+ end
 
-  end
+ def exclamation?
+   self.end_with?('!')
+ end
 
-  def exclamation?
-
-  end
-
-  def count_sentences
-
-  end
+ def count_sentences
+   self.split(/[.?!]/).select{|str| str.!= ""}.count
+ end
 end
